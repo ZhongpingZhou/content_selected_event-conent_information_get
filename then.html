@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>try choise</title>
+	<script type="text/javascript">
+		function getSelectText()
+		{
+			if(window.getSelect)
+			{
+				alert(window.getSelect().toString());
+			}
+			else if (document.selection&& document.selection.createRange) 
+			{
+				alert(document.selection.createRange().text);
+			}
+			alert("hello  world");
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="choice" onselect="getSelectText()">
+</body>
+</html>
