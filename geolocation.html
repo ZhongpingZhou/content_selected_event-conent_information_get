@@ -1,0 +1,24 @@
+<script type="text/javascript">
+function getFieldSelection(select_field)
+{
+    word='';
+    if (document.selection) {
+        var sel = document.selection.createRange();
+        if (sel.text.length > 0) {
+            word = sel.text;
+        }
+    }
+    else if (select_field.selectionStart || select_field.selectionStart == '0') {
+        var startP = select_field.selectionStart;
+        var endP = select_field.selectionEnd;
+        if (startP != endP) {
+            word = select_field.value.substring(startP, endP);
+        }
+    }
+    return word;
+}
+</script>
+<textarea id="a" rows="3" cols="20">选择我,然后点击下面的按钮</textarea><br />
+<button onclick="alert(getFieldSelection(document.getElementById('a')))">button_click</button>
+<br />
+<strong>
